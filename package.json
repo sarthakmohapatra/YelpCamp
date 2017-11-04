@@ -1,0 +1,31 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "A web application to find the best camground",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarthakmohapatra/YelpCamp.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB",
+    "ejs",
+    "passport",
+    "authentication"
+  ],
+  "author": "Sarthak Mohapatra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarthakmohapatra/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/sarthakmohapatra/YelpCamp#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}
