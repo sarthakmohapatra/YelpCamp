@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/sarthakmohapatra/YelpCamp#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
