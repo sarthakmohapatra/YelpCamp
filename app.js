@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 //Add Seed Data
-seedDB();
+// seedDB();
 
 //Passport Configuration
 app.use(require("express-session")({

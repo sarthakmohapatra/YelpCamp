@@ -3,7 +3,7 @@ var express     = require("express"),
     Campground  = require("../models/campgrounds");
 
 //Get Route
-router.get("/", function(req, res) {
+router.get("/",isLoggedIn, function(req, res) {
 	//Get all campgrounds from DB
 	Campground.find({}, function(err, campgrounds) {
 		if (err) {
@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
 });
 
 //Adding form page to get new campground
-router.get("/new", function(req, res) {
+router.get("/new", isLoggedIn, function(req, res) {
 	res.render("campgrounds/new");
 });
 
@@ -38,16 +38,21 @@ router.get("/:id", function(req, res) {
 });
 
 //adding new campground and redirecting back to all campgrounds page
-router.post("/", function(req, res) {
+router.post("/", isLoggedIn, function(req, res) {
 	//get data from form
 	//add to camgprounds array
 	var name = req.body.name;
 	var image = req.body.image;
 	var desc = req.body.description;
+  var author = {
+    id: req.user._id,
+    username: req.user.username
+  };
 	var newCampGround = {
 		name: name,
 		image: image,
-		description: desc
+		description: desc,
+    author: author
 	};
 	//create a new campground and save to DB
 	Campground.create(newCampGround, function(err, newlyCreated) {
@@ -59,5 +64,13 @@ router.post("/", function(req, res) {
 		}
 	});
 });
+
+//check for login -- can be put anywhere
+function isLoggedIn(req, res, next){
+	if(req.isAuthenticated()){
+			return next();
+	}
+	res.redirect("/login");
+}
 
 module.exports = router;
