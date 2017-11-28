@@ -1,7 +1,7 @@
-var express   = require("express"),
-    router    =  express.Router(),
-    passport  = require("passport"),
-    User      = require("../models/user");
+var express     = require("express"),
+    router      = express.Router(),
+    passport    = require("passport"),
+    User        = require("../models/user");
 
 //Index Route
 router.get("/", function(req, res) {
@@ -49,13 +49,4 @@ router.get("/logout", function(req, res){
 	req.logout();
 	res.redirect("/campgrounds");
 });
-
-//check for login -- can be put anywhere
-function isLoggedIn(req, res, next){
-	if(req.isAuthenticated()){
-			return next();
-	}
-	res.redirect("/login");
-}
-
 module.exports = router;
