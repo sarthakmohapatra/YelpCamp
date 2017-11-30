@@ -5,6 +5,7 @@ var express = require("express"),
 	Campground = require("./models/campgrounds"),
 	seedDB = require("./seeds"),
 	passport = require("passport"),
+	flash		=	require("connect-flash"),
 	LocalStrategy = require("passport-local"),
 	User = require("./models/user"),
 	methodOverride = require("method-override"),
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 //Add Seed Data
  // seedDB();
 
@@ -43,6 +45,8 @@ passport.deserializeUser(User.deserializeUser());
 //custom middleware to let know currentUser state to all routes
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
+	res.locals.error = req.flash("error");
+	res.locals.success = req.flash("success");
 	next();
 });
 
