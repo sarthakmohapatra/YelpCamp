@@ -17,7 +17,7 @@ var commentRoutes 		= require("./routes/comments"),
 
 //CONFIG
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://localhost/yelp_camp", {
+mongoose.connect("mongodb://sarthak:Jinchuriki1614@ec2-18-216-237-82.us-east-2.compute.amazonaws.com:27017/yelp_camp", {
 	useMongoClient: true
 });
 app.use(bodyParser.urlencoded({
@@ -54,6 +54,6 @@ app.use(authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(9091, 'localhost', function() {
+app.listen(9091, function() {
 	console.log("The Server has started on 9091");
 });
