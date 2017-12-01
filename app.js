@@ -17,7 +17,7 @@ var commentRoutes 		= require("./routes/comments"),
 
 //CONFIG
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://admin:Xpvatm0Gy87q@ec2-18-216-237-82.us-east-2.compute.amazonaws.com:27017/yelp_camp", {
+mongoose.connect("mongodb://ec2-18-216-237-82.us-east-2.compute.amazonaws.com:27017/yelp_camp", {
 	useMongoClient: true,
 	auth:{authdb:"admin"}
 });
