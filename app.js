@@ -17,7 +17,7 @@ var commentRoutes 		= require("./routes/comments"),
 
 //CONFIG
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://sarthakm:Jinchuriki1614@ds125716.mlab.com:25716/india_trek");
+mongoose.connect("mongodb://msarthak1614:Jinchuriki1614@@clustertest-shard-00-00-wygdv.mongodb.net:27017,clustertest-shard-00-01-wygdv.mongodb.net:27017,clustertest-shard-00-02-wygdv.mongodb.net:27017/test?ssl=true&replicaSet=ClusterTest-shard-0&authSource=admin");
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
