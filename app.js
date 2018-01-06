@@ -52,6 +52,6 @@ app.use(authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(9091, function() {
+app.listen(process.env.PORT || 9091, function() {
 	console.log("The Server has started on 9091");
 });
