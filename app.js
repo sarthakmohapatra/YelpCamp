@@ -17,7 +17,7 @@ var commentRoutes 		= require("./routes/comments"),
 
 //CONFIG
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://sarthakm:Jinchuriki1614@ds125716.mlab.com:25716/india_trek");
+mongoose.connect("mongodb://sarthakm:ThePasswordisJin1614@ds125716.mlab.com:25716/india_trek");
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
